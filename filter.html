@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Filter</title>
+    <link rel="stylesheet" href="./filter.css">
+</head>
+
+<body>
+
+    <section class="container">
+
+        <div class="filter_box" id="filter_box">
+
+            <select class="inp" id="" onchange="setFilters('category',this.value)">
+                <option value=""> Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Drink">Drink</option>
+                <option value="Dairy">Dairy</option>
+            </select>
+             
+            <input type="number" id="quantity" placeholder="Enter Quantity" class="inp" onkeyup="setFilters('quantity',this.value)">
+
+            <div class="price_filter">
+                <h2>Select Price Range</h2>
+                min
+                <p class="price">
+                    <span>0</span>
+                    <input type="range" min="0" max="300" value="0" id="minPrice" onchange="setFilters('minPrice',this.value)" class="inp no-padd">
+                    <span>300</span>
+                </p>
+                max
+                <p class="price">
+                    <span id="lowMaxPriceLable">0</span>
+                    <input type="range" min="0" max="300" id="maxPrice"  value="0" onchange="setFilters('maxPrice',this.value)"  class="inp no-padd">
+                    <span>300</span>
+                </p>
+            </div>
+            <button onclick="filter()">Filter</button>
+
+
+        </div>
+
+        <div class="data">
+
+            <div class="header">
+                <h1>All Products</h1>
+                <button onclick="openFilterSection()">Filter</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Names</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Pic</th>
+                    </tr>
+                </thead>
+
+                <tbody id="data">
+
+
+                </tbody>
+
+
+            </table>
+
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <script src="./filter.js"></script>
+</body>
+
+</html>
